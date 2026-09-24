@@ -1,0 +1,30 @@
+# device
+srvIP : '192.168.1.4'    # check IPv4
+port  : 45454            
+adaptor_chs : 12         # type of adaptor used (8emg + 4)
+emg_chs : 8
+sample_rate : 2000       # sampling frequency of device
+freq : 20                # of acquisition
+device: '64+'  # '64' or '64+'
+
+# data to publish
+publish:
+  emg_raw: 1
+  emg_filt: 0
+  emg_features_raw: 0
+  emg_features_filt: 0
+
+# processing
+channels_IDs: [0,1,2,3]
+fs: 2000
+fc_bp: [10,400]
+fc_high: 30
+fc_stop: 50
+
+# feature extraction and filtering
+features: ['rms'] #,'nzc'] # - slows down realtime processing
+featuresIDs : [1,0,0,0,1]  #rms and nzc
+twindow     : 0.15         # 150 ms
+tw_overlap  : 0.14         # 50 ms
+tbuffer     : 0.03
+fc_features : 0.5

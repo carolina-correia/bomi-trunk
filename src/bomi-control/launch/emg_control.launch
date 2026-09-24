@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="emg_node" pkg="bomicontrol" type="emg_node.py" output="screen"/> 
+  <!-- <node name="emgPub_node" pkg="bomicontrol" type="node_emgSim.py" output="screen"/>  -->
+  <!-- <node name="emgPred_node" pkg="bomicontrol" type="node_emgPred.py" output="screen"/>  -->
+
+  
+  <!-- <node name="imu_interface_node" pkg="bomicontrol" type="hmi_imu.py" output="screen"/> -->
+  <node name="emg_interface_node" pkg="bomicontrol" type="hmi_emg.py" output="screen"/>
+
+  <!-- <node name="cursor_node" pkg="bomicontrol" type="node_cursor.py" output="screen"/>
+  <node name="savedata_node" pkg="bomicontrol" type="node_save.py" output="screen"/>  -->
+
+</launch>

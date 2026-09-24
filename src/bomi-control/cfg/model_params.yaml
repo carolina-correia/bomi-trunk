@@ -1,0 +1,54 @@
+# Shape: [theta,phi, theta_dot, phi_dot, rms_ch1, rms_ch2, rms_ch3, rms_ch4, nzc_ch1, nzc_ch2, nzc_ch3, nzc_ch4]
+subj: 'S3'
+date: '19_04_2024'
+file: '11_58' ####
+modality: 'imu'
+
+model:
+  net: lstm
+  name: lstm
+  hidden_dim: 128
+  preoutput_size: 16
+  num_layers: 2
+  autoregressive: 1 # 1 for sure
+  dropout: 0.25
+  stateful: false
+
+# lstm window
+time_step: 0.01   # 10 Hz
+window_size: 100  # 10: 1 second = int(twindow*fs) fs = 10
+window_step: 1   # get always last 20 samples
+delay: 1        # 0 to predict the same time instance, 1 to predict next
+dimension: 2
+
+train:
+  load: 0
+  split: 'cmw'
+  percentage: 0.94
+  random: True
+  traj_idx: [] #set to empty if want to use the first N
+  position: true
+  velocity: true
+  acceleration: false
+  emg_features: 'rms' #'rms', 'nzc'
+  normalize_input: true
+  normalize_output: true  
+  padding: 0
+  num_epochs: 8000
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-6
+  loss_tolerance: 1.0e-10
+  dynamic_lr: true
+  patience: 15
+  verbose: true
+  shuffle: true
+  batch_size: 1000
+
+test:
+  num_trajectories: 45
+  traj_idx: [8,9,10,11,12]
+  duration: 30.0
+  padding: true
+
+
+

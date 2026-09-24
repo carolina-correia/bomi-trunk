@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="imu_node" pkg="bomicontrol" type="imu_node.py" output="screen"/>
+  <node name="calibration_node" pkg="bomicontrol" type="calibrate_imu.py" output="screen"/>
+</launch>

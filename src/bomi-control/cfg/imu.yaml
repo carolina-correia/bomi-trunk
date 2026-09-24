@@ -1,0 +1,5 @@
+imu_nb: [1]
+rate: 120
+calibration_time: 15 # seconds
+filter: False
+fc_lp: 15 #?

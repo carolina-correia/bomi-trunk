@@ -1,0 +1,34 @@
+record:
+  subj: 'S3'
+  modality: 'imu' #or  'imu' 'acquisition'
+  data_to_save: ['imu','hmi','cursor','task','emg']
+  freq: 2000
+
+load: # from where H is loaded
+  subj: 'S3'
+  date: '19_04_2024'
+  file: '16_00' 
+  modality: 'imu'
+
+interface:
+  task: 'sim'    # 'path_following', 'sim', 'training', 'free'
+  trial_duration: 6.5   # seconds
+  n_repetitions:  20    # set target list, for each target
+  r_cursor: 8  
+  r_circle: 30
+  traj_thickness: 35
+  home_loc: 'center'
+  freq: 50
+  freq_trajectory: 50 #Hz   # larger makes it slower, 10Hz is the recorded one
+  imu_recalibration: True  # recalibrate every trial
+  traj_id: []
+
+emg_pattern:
+  T: 10 #seconds
+  function: gaussian  # or gaussian
+  active_muscles: [[0,1],[1,0]] # [[0],[1],[2],[3],[0,1],[2,3],[0,2],[1,3]]
+  emg_timings   : [[2,3],[2,3]] # seconds
+  activ_level   : [[1,1],[1,1]] # percentage of maximum EMG amplitude
+  activ_duration:   # seconds, standard deviation
+  
+muscles_names: ['ES right','ES left', 'OEA right','OEA left']

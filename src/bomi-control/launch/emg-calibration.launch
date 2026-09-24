@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="emg_node" pkg="bomicontrol" type="emg_node.py" output="screen"/> 
+  <node name="emg_calib_node" pkg="bomicontrol" type="calibrate_emg.py" output="screen"/>
+</launch>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="savedata_node" pkg="bomicontrol" type="save_node.py" output="screen"/> 
+  <node name="imu_interface_node" pkg="bomicontrol" type="hmi_imu.py" output="screen"/>
+  <node name="emg_node" pkg="bomicontrol" type="emg_node.py" output="screen"/> 
+  <!-- <node name="cursor_node" pkg="bomicontrol" type="node_cursor.py" output="screen"/> -->
+</launch>

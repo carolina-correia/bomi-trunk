@@ -1,0 +1,29 @@
+# catkin
+build/
+devel/
+install/
+logs/
+.catkin_tools/
+
+# Python
+__pycache__/
+*.py[cod]
+.cache/
+.ipynb_checkpoints/
+
+# Data, results and trained models (never commit participant data)
+data/
+*.pkl
+*.npy
+*.pt
+*.sav
+*.xlsx
+*.csv
+*.mat
+*.out
+*.log
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
