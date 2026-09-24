@@ -86,10 +86,10 @@ class Cursor_interface:
             self.cursor_pos = self.cursor_pos + self.desVel*self.dt
             
         if self.controller_type == 'MSD':
-            Fc = targetPos
-            acc = (Fc - self.k*self.cursor_pos - self.d*vel)/self.mass
-            vel = vel + acc * self.dt
-            self.cursor_pos = self.cursor_pos + vel*self.dt
+            # spring pulls the cursor to the target, damper opposes cursor velocity
+            acc = (self.k*(targetPos - self.cursor_pos) - self.d*self.cursor_vel)/self.mass
+            self.cursor_vel = self.cursor_vel + acc * self.dt
+            self.cursor_pos = self.cursor_pos + self.cursor_vel*self.dt
             
         if self.controller_type == 'PD':
             Fc = self.k * (targetPos-self.cursor_pos) - self.d * self.cursor_vel

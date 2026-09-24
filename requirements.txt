@@ -1,0 +1,18 @@
+# Python dependencies of the bomicontrol package.
+# Install with: pip install -r requirements.txt
+#
+# ROS packages (rospy, rospkg, std_msgs, geometry_msgs, sensor_msgs) come with ROS 1 Noetic,
+# and hiros_xsens_mtw_wrapper is built from source in the catkin workspace (see README).
+
+numpy
+scipy
+matplotlib
+pandas
+seaborn
+torch
+pyyaml
+pyautogui
+opencv-python
+
+# only needed to open the example notebook
+jupyter

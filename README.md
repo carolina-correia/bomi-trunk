@@ -109,7 +109,7 @@ src/bomi-control/
 
 - Ubuntu with ROS 1 (Noetic) and catkin
 - [`hiros_xsens_mtw_wrapper`](https://github.com/HiROS-unipd/xsens_mtw_wrapper): ROS driver for the Xsens MTw IMUs, by Hi-ROS (University of Padova). Clone it into the workspace's `src/` folder next to `bomi-control`; it needs the [Xsens MTw Awinda SDK](https://www.xsens.com/products/mtw-awinda). Configure its launch file for one MTw at 120 Hz with Euler angles published (`number_of_mtws: 1`, `desired_update_rate: 120`, `publish_euler: true`), since the nodes subscribe to its `Euler` messages.
-- Python 3 with `numpy scipy matplotlib pandas seaborn torch pyyaml pyautogui opencv-python`
+- Python 3 packages listed in [`requirements.txt`](requirements.txt): `pip install -r requirements.txt`
 - Hardware: Xsens MTw Awinda IMU and an OTB Sessantaquattro+ EMG amplifier, connected over the network (set its IP in `cfg/emg.yaml`)
 
 ## Setup
